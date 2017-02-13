@@ -7,7 +7,6 @@ import {Course} from './Course';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Welcome to the Course Planner';
   courses : Course[];
 
   folders = [

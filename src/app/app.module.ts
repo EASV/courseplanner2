@@ -7,10 +7,12 @@ import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
+import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopToolbarComponent
   ],
   imports: [
     BrowserModule,
