@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Course} from './Course';
 
 @Component({
-  selector: 'app-root',
+  selector: 'cp-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
