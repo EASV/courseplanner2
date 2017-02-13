@@ -1,6 +1,13 @@
-<h1>
-  {{title}}
-</h1>
+<md-toolbar color="primary">
+  <span>{{title}}</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="example-fill-remaining-space"></span>
+
+  <span>Right Aligned Text</span>
+</md-toolbar>
+
+
 <ul>
   <li *ngFor="let course of courses">{{course.title}} - {{course.lecturer}}</li>
 </ul>
