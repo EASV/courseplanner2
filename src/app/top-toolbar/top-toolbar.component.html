@@ -1,10 +1,10 @@
 <md-toolbar color="primary">
-  <button md-button><fa [name]="'beer'" size=2></fa> {{title}}</button>
+  <button md-button routerLink="/"><fa [name]="'beer'" size=2></fa> {{title}}</button>
 
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <button md-button>Sign in <fa [name]="'sign-in'" size=1></fa></button>
+  <button md-button routerLink="/login">Sign in <fa [name]="'sign-in'" size=1></fa></button>
 
 </md-toolbar>
 
