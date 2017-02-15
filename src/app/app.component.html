@@ -1,8 +1,8 @@
-<cp-top-toolbar></cp-top-toolbar>
+<cp-top-toolbar [title]="toolbarTitle" ></cp-top-toolbar>
 <ul>
   <li *ngFor="let course of courses">{{course.title}} - {{course.lecturer}}</li>
 </ul>
-
+<input [(ngModel)]="toolbarTitle">
 <hr>
 <md-list>
   <h3 md-subheader>Folders</h3>

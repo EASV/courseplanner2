@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'cp-top-toolbar',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-toolbar.component.css']
 })
 export class TopToolbarComponent implements OnInit {
-  title = 'CoursePlanner2';
+  @Input()
+  title : string;
 
   constructor() { }
 

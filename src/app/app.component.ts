@@ -8,6 +8,7 @@ import {Course} from './Course';
 })
 export class AppComponent {
   courses : Course[];
+  toolbarTitle = 'Courseplanner2';
 
   folders = [
     {
