@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-toolbar.component.css']
 })
 export class TopToolbarComponent implements OnInit {
-  title = 'Welcome to the Course Planner';
+  title = 'CoursePlanner2';
 
   constructor() { }
 
