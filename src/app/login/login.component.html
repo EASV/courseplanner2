@@ -1,1 +1,21 @@
-<p>Hi login</p>
+<div fxFlexFill [fxLayout]="column">
+  <button md-mini-fab routerLink="/"><fa [name]="'arrow-left'"></fa></button>
+  <div fxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
+    <md-card style="margin: 0;width: 200px;">
+      <fa [name]="'lock'"></fa>   Login
+      <md-card-content>
+        <md-input-container>
+          <input md-input placeholder="Email">
+        </md-input-container>
+        <md-input-container>
+          <input md-input placeholder="Password" type="password">
+        </md-input-container>
+
+      </md-card-content>
+      <md-card-actions class="example-button-row">
+        <button class="login-button" md-button routerLink="/lostPassword">Lost password</button>
+        <button md-raised-button color="primary">Sign in</button>
+      </md-card-actions>
+    </md-card>
+  <div>
+</div>

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
     HttpModule,
     Angular2FontawesomeModule,
     MaterialModule.forRoot(),
+    FlexLayoutModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],
