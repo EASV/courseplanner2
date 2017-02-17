@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { LoginViewComponent } from './login/login-view.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     TopToolbarComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    LoginViewComponent
   ],
   imports: [
     BrowserModule,

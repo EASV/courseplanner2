@@ -1,14 +1,11 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'cp-login',
-  templateUrl: './login.component.html' ,
-  styleUrls: ['./login.component.css']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
 
-  @Input()
-  signInError : string;
 
   constructor() {
   }
