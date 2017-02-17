@@ -17,7 +17,15 @@ export class LoginComponent implements OnInit {
   }
 
   login(user){
-    console.log('user', user);
+    let userAccepted = this.users
+      .filter(x => x.username === user.username)
+      .filter(y => y.password === user.password);
+    if(userAccepted && userAccepted.length === 1){
+      console.log("login success");
+    } else {
+      console.log("not correct username and password");
+    }
+
   }
 
   ngOnInit() {
