@@ -3,6 +3,11 @@
   <div fxFlexFill [fxLayout]="row" fxLayoutAlign="center center">
     <md-card style="margin: 0;width: 200px;">
       <fa [name]="'lock'"></fa>   Login
+      <p *ngIf="signInError && signInError.length > 0"
+         class="error-message">
+        <fa [name]="'exclamation-circle'"></fa>
+        {{signInError}}
+      </p>
       <md-card-content>
         <md-input-container>
           <input md-input placeholder="Email">
