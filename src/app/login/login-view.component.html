@@ -13,16 +13,21 @@
       </p>
       <md-card-content>
         <md-input-container>
-          <input md-input placeholder="Username">
+          <input md-input
+                 placeholder="Username"
+                 [(ngModel)]="user.username">
         </md-input-container>
         <md-input-container>
-          <input md-input placeholder="Password" type="password">
+          <input md-input
+                 placeholder="Password"
+                 type="password"
+                 [(ngModel)]="user.password">
         </md-input-container>
 
       </md-card-content>
       <md-card-actions class="example-button-row">
         <button class="login-button" md-button routerLink="/lostPassword">Lost password</button>
-        <button md-raised-button color="primary">Sign in</button>
+        <button (click)="tryLogin()" md-raised-button color="primary">Sign in</button>
       </md-card-actions>
     </md-card>
   </div>
