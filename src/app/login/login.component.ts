@@ -7,6 +7,7 @@ import {User} from "../users/user";
 })
 export class LoginComponent implements OnInit {
 
+  loginError : string;
   users : User[];
   constructor() {
     this.users = [
@@ -21,9 +22,9 @@ export class LoginComponent implements OnInit {
       .filter(x => x.username === user.username)
       .filter(y => y.password === user.password);
     if(userAccepted && userAccepted.length === 1){
-      console.log("login success");
+      this.loginError = null;
     } else {
-      console.log("not correct username and password");
+      this.loginError = "username and password was wrong";
     }
 
   }
