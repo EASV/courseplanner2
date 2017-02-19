@@ -18,17 +18,21 @@ export class LoginComponent implements OnInit {
   }
 
   login(user){
-    let loggedInUser = this.authService.login(user.username, user.password);
-    if(loggedInUser){
-      this.loginError = null;
-      this.router.navigate(['/']).then(() => {
-        this.loginValidationBar.open("You are logged in", "Ok", {
-          duration: 3000,
-        });
+    this.authService
+      .login(user.username, user.password)
+      .then((lUser) => {
+        if(lUser){
+          this.loginError = null;
+          this.router.navigate(['/']).then(() => {
+            this.loginValidationBar.open("You are logged in", "Ok", {
+              duration: 3000,
+            });
+          });
+        } else {
+          this.loginError = "username and password was wrong";
+        }
       });
-    } else {
-      this.loginError = "username and password was wrong";
-    }
+
 
   }
 

@@ -13,12 +13,12 @@ export class AuthService {
     ];
   }
 
-  login(username, password) : User{
+  login(username, password) : Promise<User>{
     let userAccepted = this.users
       .filter(x => x.username === username)
       .filter(y => y.password === password);
     if(userAccepted && userAccepted.length === 1){
-      return userAccepted[0];
+      return Promise.resolve(userAccepted[0]);
     } else {
       return null;
     }
