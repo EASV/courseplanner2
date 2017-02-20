@@ -1,6 +1,7 @@
 {
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "version": "1.0.0-beta.30",
+    "version": "1.0.0-beta.32.3",
     "name": "courseplanner2"
   },
   "apps": [
@@ -22,8 +23,8 @@
         "../node_modules/font-awesome/css/font-awesome.css"
       ],
       "scripts": [],
+      "environmentSource": "environments/environment.ts",
       "environments": {
-        "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
