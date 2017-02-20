@@ -20,7 +20,7 @@ export class AuthService {
     if(userAccepted && userAccepted.length === 1){
       return Promise.resolve(userAccepted[0]);
     } else {
-      return null;
+      return Promise.resolve(null);
     }
 
   }
