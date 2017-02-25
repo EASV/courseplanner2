@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     Angular2FontawesomeModule,
-    MaterialModule.forRoot(),
+    MaterialModule,
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes)
   ],
