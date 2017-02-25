@@ -4,7 +4,8 @@
   <!-- This fills the remaining space of the current row -->
   <span class="example-fill-remaining-space"></span>
 
-  <button md-button routerLink="/login">Sign in <fa [name]="'sign-in'" size=1></fa></button>
+  <button *ngIf="!user" md-button routerLink="/login">Sign in <fa [name]="'sign-in'" size=1></fa></button>
+  <button *ngIf="user" md-button (click)="logout()">Sign out <fa [name]="'sign-out'" size=1></fa></button>
 
 </md-toolbar>
 

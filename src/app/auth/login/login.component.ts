@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(public loginValidationBar: MdSnackBar,
               private router: Router,
-              private authService: AuthService) {
-
+              private auth: AuthService) {
+    this.auth.logout();
   }
 
   login(user) {
@@ -25,9 +25,9 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (this.request) {
       this.request.unsubscribe();
     }
-    this.request = this.authService
+    this.request = this.auth
       .login(user.username, user.password)
-      .delay(5000)
+      .delay(1000)
       .subscribe(
         //Is the data
         (lUser) => {
