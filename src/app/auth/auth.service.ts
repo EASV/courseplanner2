@@ -30,4 +30,8 @@ export class AuthService {
     return JSON.parse(localStorage.getItem('currentUser'));
   }
 
+  logout(){
+    return localStorage.setItem('currentUser', null);
+  }
+
 }
