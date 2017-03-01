@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../users/user.service";
+import {Observable} from "rxjs";
+import {User} from "../users/user";
+import {log} from "util";
 
 @Component({
   selector: 'cp-home',
@@ -33,7 +37,12 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor() { }
+  users : Observable<User[]>;
+
+  constructor(private userService : UserService) {
+    this.users = this.userService.getUsers();
+    console.log('users', this.users);
+  }
 
   ngOnInit() {
   }

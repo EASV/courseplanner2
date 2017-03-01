@@ -1,21 +1,17 @@
 <cp-top-toolbar [title]="toolbarTitle" ></cp-top-toolbar>
-<ul>
-  <li *ngFor="let course of courses">{{course.title}} - {{course.lecturer}}</li>
-</ul>
-<input [(ngModel)]="toolbarTitle">
-<hr>
-<md-list>
-  <h3 md-subheader>Folders</h3>
-  <md-list-item *ngFor="let folder of folders">
-    <md-icon md-list-avatar>folder</md-icon>
-    <h4 md-line>{{folder.name}}</h4>
-    <p md-line> {{folder.updated | date}} </p>
-  </md-list-item>
-  <md-divider></md-divider>
-  <h3 md-subheader>Notes</h3>
-  <md-list-item *ngFor="let note of notes">
-    <md-icon md-list-avatar>note</md-icon>
-    <h4 md-line>{{note.name}}</h4>
-    <p md-line> {{note.updated | date}} </p>
-  </md-list-item>
-</md-list>
+<md-card>
+  <md-card-content>
+    <fa [name]="'users'"></fa> Users
+    <hr>
+    <md-list>
+      <md-list-item *ngFor="let user of users | async">
+        <h4 md-line> <fa [name]="'user-o'"></fa> {{user.username}}</h4>
+        <p md-line> <fa [name]="'envelope-o'"></fa> {{user.email}} </p>
+        <p md-line> <fa [name]="'key'"></fa> {{user.password}} </p>
+        <p md-line> <md-divider></md-divider></p>
+      </md-list-item>
+
+    </md-list>
+  </md-card-content>
+</md-card>
+
