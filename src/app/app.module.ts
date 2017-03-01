@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {HttpModule, BaseRequestOptions, Http} from '@angular/http';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome'
 import { MaterialModule } from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
@@ -14,6 +14,9 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './auth/login/login.component';
 import { LoginViewComponent } from './auth/login/login-view.component';
 import {AuthService} from "./auth/auth.service";
+import {UserService} from "./users/user.service";
+import {MockBackend} from "@angular/http/testing";
+import {MockBackendService} from "../mock-backend/mock-backend.service";
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -37,7 +40,22 @@ const appRoutes: Routes = [
     FlexLayoutModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    UserService,
+    MockBackend,
+    MockBackendService,
+    BaseRequestOptions,
+    {
+      provide: Http,
+      deps: [MockBackend, BaseRequestOptions],
+      useFactory: (
+        backend: MockBackend,
+        options: BaseRequestOptions) => {
+            return new Http(backend, options);
+        }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
